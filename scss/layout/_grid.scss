@@ -1,0 +1,177 @@
+@use "../util";
+
+.grid {
+  display: grid;
+  gap: 2em;
+  padding: 2em;
+  background-color: util.getColor("white");
+  border-radius: 1.5em;
+  width: 100%;
+  max-width: calc(800em / 16);
+
+  &__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  &__left {
+    display: inherit;
+    gap: 2em;
+  }
+
+  &__tips {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+
+    @include util.maxWidth("xsmall") {
+      grid-template-columns: 1fr;
+    }
+
+    @include util.minWidth("medium") {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__tip {
+    padding: 0.25em;
+    border-radius: calc(3em / 16);
+    background-color: util.getColor("very-dark-cyan");
+    color: util.getColor("white");
+
+    &:hover {
+      cursor: pointer;
+      background-color: util.getColor("light-grayish-cyan");
+      color: util.getColor("very-dark-cyan");
+    }
+
+    &.active {
+      background-color: util.getColor("strong-cyan");
+      color: util.getColor("very-dark-cyan");
+    }
+  }
+
+  &__texts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__warning {
+    color: util.getColor("custom-orange");
+  }
+
+  &__labels {
+    display: block;
+    margin-bottom: 0.5em;
+    color: util.getColor("dark-grayish-cyan");
+  }
+
+  &__inputs {
+    text-align: right;
+    padding: 0.25em;
+    padding-left: 1.25em;
+    background-color: util.getColor("very-light-grayish-cyan");
+    color: util.getColor("very-dark-cyan");
+    background-position: 0.5em center;
+    background-repeat: no-repeat;
+    outline-color: util.getColor("strong-cyan");
+    border-radius: calc(7rem / 16);
+
+    &::placeholder {
+      color: util.getColor("grayish-cyan");
+    }
+
+    &:hover {
+      cursor: pointer;
+      border: 3px solid util.getColor("strong-cyan");
+    }
+  }
+
+  &__inputs[name="bill"] {
+    background-image: url("../../assets/images/icon-dollar.svg");
+  }
+
+  &__inputs[name="people"] {
+    background-image: url("../../assets/images/icon-person.svg");
+  }
+
+  &__custom {
+    background-color: util.getColor("very-light-grayish-cyan");
+    padding: 0.25em;
+
+    &::placeholder {
+      color: util.getColor("dark-grayish-cyan");
+      text-align: center;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: util.getColor("very-dark-cyan");
+    padding: 2em;
+    border-radius: 1em;
+    gap: 2em;
+
+    & > *:first-child {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+      justify-content: space-between;
+    }
+  }
+
+  &__output {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include util.maxWidth("xsmall") {
+      flex-direction: column;
+    }
+  }
+
+  &__text > * {
+    color: util.getColor("white");
+
+    &:last-child {
+      color: util.getColor("grayish-cyan");
+    }
+  }
+
+  &__total {
+    font-size: calc(32rem / 16);
+    color: util.getColor("strong-cyan");
+  }
+
+  &__reset {
+    background-color: util.getColor("strong-cyan");
+    padding: 0.25em;
+    border-radius: calc(7rem / 16);
+    color: util.getColor("very-dark-cyan");
+    text-transform: uppercase;
+
+    &:enabled:hover {
+      cursor: pointer;
+      background-color: util.getColor("light-grayish-cyan");
+      color: util.getColor("very-dark-cyan");
+    }
+
+    &:disabled {
+      background-color: util.getColor("white");
+      opacity: 0.2;
+    }
+  }
+
+  @include util.minWidth("medium") {
+    grid-template-columns: 1fr 1fr;
+  }
+}

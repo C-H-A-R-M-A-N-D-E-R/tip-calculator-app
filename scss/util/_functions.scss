@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "variables";
+
+@function getColor($color) {
+  $colors: map-merge(
+    $map1: variables.$primaryColors,
+    $map2: variables.$neutralColors,
+  );
+  $colorValue: map-get(
+    $map: $colors,
+    $key: $color,
+  );
+
+  @if (type-of($colorValue) == "null") {
+    @error "Invalid color: '#{$color}'.";
+  }
+  @return $colorValue;
+}

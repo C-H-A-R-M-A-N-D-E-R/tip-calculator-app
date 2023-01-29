@@ -1,0 +1,32 @@
+@use "sass:map";
+@use "variables";
+
+@mixin minWidth($breakpoint) {
+  $breakpointValue: map-get(
+    $map: variables.$breakpoints,
+    $key: $breakpoint,
+  );
+
+  @if (type-of($breakpointValue) == "null") {
+    @error "Invalid color: '#{$breakpoint}'.";
+  }
+
+  @media (min-width: $breakpointValue) {
+    @content;
+  }
+}
+
+@mixin maxWidth($breakpoint) {
+  $breakpointValue: map-get(
+    $map: variables.$breakpoints,
+    $key: $breakpoint,
+  );
+
+  @if (type-of($breakpointValue) == "null") {
+    @error "Invalid color: '#{$breakpoint}'.";
+  }
+
+  @media (max-width: $breakpointValue) {
+    @content;
+  }
+}

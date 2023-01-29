@@ -1,0 +1,10 @@
+@use "../util";
+
+.attribution {
+  font-size: calc(11rem / 16);
+  text-align: center;
+
+  &__link {
+    color: util.getColor("custom-blue");
+  }
+}

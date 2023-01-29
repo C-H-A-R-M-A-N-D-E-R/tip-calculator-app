@@ -1,0 +1,23 @@
+$primaryColors: (
+  "custom-blue": hsl(228, 45%, 44%),
+  "strong-cyan": hsl(172, 67%, 45%),
+  "custom-orange": hsl(18, 68%, 56%),
+);
+
+$neutralColors: (
+  "very-dark-cyan": hsl(183, 100%, 15%),
+  "dark-grayish-cyan": hsl(186, 14%, 43%),
+  "grayish-cyan": hsl(184, 14%, 56%),
+  "light-grayish-cyan": hsl(185, 41%, 84%),
+  "very-light-grayish-cyan": hsl(189, 41%, 97%),
+  "white": hsl(0, 0%, 100%),
+);
+
+$breakpoints: (
+  "xsmall": 320px,
+  "small": 576px,
+  "medium": 768px,
+  "large": 1024px,
+  "xlarge": 1200px,
+  "xxlarge": 1400px,
+);

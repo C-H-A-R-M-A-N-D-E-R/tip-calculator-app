@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Space Mono";
+  src: url("../../assets/fonts/space-mono/SpaceMono-Bold.ttf");
+  font-weight: bold;
+}
+
+body {
+  font-family: "Space Mono";
+}
+
+input {
+  font-size: calc(24rem / 16);
+  font-weight: bold;
+}

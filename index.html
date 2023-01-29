@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <header class="header">
+      <img src="./assets/images/logo.svg" alt="logo" />
+    </header>
+
+    <main class="grid">
+      <h1 class="grid__sr-only">For ScreenReaders Only!</h1>
+      <div class="grid__left">
+        <div>
+          <label class="grid__labels" for="bill">Bill</label>
+          <input
+            class="grid__inputs"
+            type="number"
+            name="bill"
+            id="bill"
+            placeholder="0"
+          />
+        </div>
+        <div>
+          <label class="grid__labels" for="custom">Select Tip %</label>
+          <div class="grid__tips">
+            <input class="grid__tip" type="button" value="5%" />
+            <input class="grid__tip" type="button" value="10%" />
+            <input class="grid__tip" type="button" value="15%" />
+            <input class="grid__tip" type="button" value="25%" />
+            <input class="grid__tip" type="button" value="50%" />
+            <input
+              class="grid__inputs grid__custom"
+              type="number"
+              name="custom"
+              id="custom"
+              placeholder="Custom"
+            />
+          </div>
+        </div>
+        <div>
+          <div class="grid__texts">
+            <label class="grid__labels" for="people">Number of People</label>
+            <p class="grid__warning" hidden>Can't be zero</p>
+          </div>
+          <input
+            class="grid__inputs"
+            type="number"
+            name="people"
+            id="people"
+            placeholder="0"
+          />
+        </div>
+      </div>
+
+      <div class="grid__right">
+        <div>
+          <div class="grid__output">
+            <div class="grid__text">
+              <p>Tip Amount</p>
+              <p>/ person</p>
+            </div>
+            <p class="grid__total tip-amount">$0.00</p>
+          </div>
+          <div class="grid__output">
+            <div class="grid__text">
+              <p>Total</p>
+              <p>/ person</p>
+            </div>
+            <p class="grid__total total-amount">$0.00</p>
+          </div>
+        </div>
+        <input class="grid__reset" type="button" value="Reset" disabled />
+      </div>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a
+        class="attribution__link"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a class="attribution__link" href="#">JaBoL</a>.
+    </footer>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>

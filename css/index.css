@@ -1,0 +1,228 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: hsl(185deg, 41%, 84%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+}
+
+input {
+  font: inherit;
+  border: none;
+  width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "Space Mono";
+  src: url("../../assets/fonts/space-mono/SpaceMono-Bold.ttf");
+  font-weight: bold;
+}
+body {
+  font-family: "Space Mono";
+}
+
+input {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  gap: 2em;
+  padding: 2em;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 1.5em;
+  width: 100%;
+  max-width: 50em;
+}
+.grid__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.grid__left {
+  display: inherit;
+  gap: 2em;
+}
+.grid__tips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+@media (max-width: 320px) {
+  .grid__tips {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 768px) {
+  .grid__tips {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.grid__tip {
+  padding: 0.25em;
+  border-radius: 0.1875em;
+  background-color: hsl(183deg, 100%, 15%);
+  color: hsl(0deg, 0%, 100%);
+}
+.grid__tip:hover {
+  cursor: pointer;
+  background-color: hsl(185deg, 41%, 84%);
+  color: hsl(183deg, 100%, 15%);
+}
+.grid__tip.active {
+  background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+}
+.grid__texts {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.grid__warning {
+  color: hsl(18deg, 68%, 56%);
+}
+.grid__labels {
+  display: block;
+  margin-bottom: 0.5em;
+  color: hsl(186deg, 14%, 43%);
+}
+.grid__inputs {
+  text-align: right;
+  padding: 0.25em;
+  padding-left: 1.25em;
+  background-color: hsl(189deg, 41%, 97%);
+  color: hsl(183deg, 100%, 15%);
+  background-position: 0.5em center;
+  background-repeat: no-repeat;
+  outline-color: hsl(172deg, 67%, 45%);
+  border-radius: 0.4375rem;
+}
+.grid__inputs::placeholder {
+  color: hsl(184deg, 14%, 56%);
+}
+.grid__inputs:hover {
+  cursor: pointer;
+  border: 3px solid hsl(172deg, 67%, 45%);
+}
+.grid__inputs[name=bill] {
+  background-image: url("../../assets/images/icon-dollar.svg");
+}
+.grid__inputs[name=people] {
+  background-image: url("../../assets/images/icon-person.svg");
+}
+.grid__custom {
+  background-color: hsl(189deg, 41%, 97%);
+  padding: 0.25em;
+}
+.grid__custom::placeholder {
+  color: hsl(186deg, 14%, 43%);
+  text-align: center;
+}
+.grid__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: hsl(183deg, 100%, 15%);
+  padding: 2em;
+  border-radius: 1em;
+  gap: 2em;
+}
+.grid__right > *:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  justify-content: space-between;
+}
+.grid__output {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 320px) {
+  .grid__output {
+    flex-direction: column;
+  }
+}
+.grid__text > * {
+  color: hsl(0deg, 0%, 100%);
+}
+.grid__text > *:last-child {
+  color: hsl(184deg, 14%, 56%);
+}
+.grid__total {
+  font-size: 2rem;
+  color: hsl(172deg, 67%, 45%);
+}
+.grid__reset {
+  background-color: hsl(172deg, 67%, 45%);
+  padding: 0.25em;
+  border-radius: 0.4375rem;
+  color: hsl(183deg, 100%, 15%);
+  text-transform: uppercase;
+}
+.grid__reset:enabled:hover {
+  cursor: pointer;
+  background-color: hsl(185deg, 41%, 84%);
+  color: hsl(183deg, 100%, 15%);
+}
+.grid__reset:disabled {
+  background-color: hsl(0deg, 0%, 100%);
+  opacity: 0.2;
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+}
+.attribution__link {
+  color: hsl(228deg, 45%, 44%);
+}
+
+.header {
+  padding: 1em;
+}
+
+/*# sourceMappingURL=index.css.map */
