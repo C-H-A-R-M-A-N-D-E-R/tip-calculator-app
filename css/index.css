@@ -46,7 +46,7 @@ input::-webkit-inner-spin-button {
 }
 @font-face {
   font-family: "Space Mono";
-  src: url("../../assets/fonts/space-mono/SpaceMono-Bold.ttf");
+  src: url("../assets/fonts/space-mono/SpaceMono-Bold.ttf");
   font-weight: bold;
 }
 body {
@@ -142,11 +142,11 @@ input {
   cursor: pointer;
   border: 3px solid hsl(172deg, 67%, 45%);
 }
-.grid__inputs[name=bill] {
-  background-image: url("../../assets/images/icon-dollar.svg");
+.grid__inputs[name="bill"] {
+  background-image: url("../assets/images/icon-dollar.svg");
 }
-.grid__inputs[name=people] {
-  background-image: url("../../assets/images/icon-person.svg");
+.grid__inputs[name="people"] {
+  background-image: url("../assets/images/icon-person.svg");
 }
 .grid__custom {
   background-color: hsl(189deg, 41%, 97%);
